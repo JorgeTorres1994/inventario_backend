@@ -11,5 +11,6 @@ public interface ICategoryService {
 	public ResponseEntity<CategoryResponseRest> buscarPorId(Long id);
 	public ResponseEntity<CategoryResponseRest> guardar(Category category);
 	public ResponseEntity<CategoryResponseRest> actualizar(Category category, Long id);//recibe la categoria y el id
+	public ResponseEntity<CategoryResponseRest> eliminar(Long id);
 	
 }
