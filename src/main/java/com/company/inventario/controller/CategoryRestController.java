@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -39,8 +40,17 @@ public class CategoryRestController {
 	//Guardar categorias con parametro Category
 	
 	@PostMapping("/categories")
-	public ResponseEntity<CategoryResponseRest> guardar(@RequestBody Category category){//Requestbody recupera lo que venga del objeto JSON y mapear a la Categorua
+	public ResponseEntity<CategoryResponseRest> guardar(@RequestBody Category category){//Requestbody recupera lo que venga del objeto JSON y mapear a la Categoria
 		ResponseEntity<CategoryResponseRest> response = service.guardar(category);//igualamoscomo respuesta al metodo guardar del servicio
 		return response;
 	}
+	
+	//Actualizar categoria con parametro Category y el id
+	
+	@PutMapping("/categories/{id}")
+	public ResponseEntity<CategoryResponseRest> actualizar(@RequestBody Category category, @PathVariable Long id){//Requestbody recupera lo que venga del objeto JSON y mapear a la Categoria y el id  a buscar
+		ResponseEntity<CategoryResponseRest> response = service.actualizar(category, id);//igualamoscomo respuesta al metodo actualizar del servicio
+		return response;
+	}
+	
 }

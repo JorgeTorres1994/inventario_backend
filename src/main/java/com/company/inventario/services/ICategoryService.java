@@ -10,5 +10,6 @@ public interface ICategoryService {
 	public ResponseEntity<CategoryResponseRest> mostrar();//da estructura de respuesta http con un codigo y con una respuesta custom (CategoriaResponseRest)
 	public ResponseEntity<CategoryResponseRest> buscarPorId(Long id);
 	public ResponseEntity<CategoryResponseRest> guardar(Category category);
+	public ResponseEntity<CategoryResponseRest> actualizar(Category category, Long id);//recibe la categoria y el id
 	
 }
